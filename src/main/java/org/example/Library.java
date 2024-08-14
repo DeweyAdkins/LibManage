@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class Library {
     private List<Book> books;
     private List<User> users;
-    private static final int LOAN_PERIOD_MS = 14 * 24 * 60 * 60 * 1000; // 2 weeks in milliseconds
+    private static final int LOAN_PERIOD_MS = 14 * 24 * 60 * 60 * 1000;
 
     public Library() {
         this.books = new ArrayList<>();
@@ -24,6 +24,10 @@ public class Library {
 
     public void removeBookByTitle(String title) {
         books.removeIf(book -> book.getTitle().equals(title));
+    }
+
+    public List<Book> getBooks() {
+        return books;
     }
 
     public List<Book> findBooksByYear(int year) {
